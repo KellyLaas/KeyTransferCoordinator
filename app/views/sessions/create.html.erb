@@ -1,0 +1,18 @@
+<ul>
+  <li>
+    <%= @user.uid %>
+  </li>
+  <li>
+    <%= @user.name %>
+  </li>
+  <li>
+    <%= @user.email %>
+  </li>
+  <li>
+    <%= image_tag @user.image_url %>
+  </li>
+</ul>
+
+<p>
+  <%= "The session helper thinks I am #{current_user.name}" %>
+</p>
