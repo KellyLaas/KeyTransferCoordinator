@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   get 'sessions/new'
-  match 'auth/:provider/callback', to: 'sessions#create'
+  match 'auth/:provider/callback', to: 'sessions#create', via: [:post, :get]
   resources :legs
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   get 'legs/index', to: 'legs#index', as: 'index'
