@@ -1,11 +1,8 @@
 class SessionsController < ApplicationController
   skip_before_action :verify_authenticity_token
-  before_action :set_user, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_user, except: [:index, :show]
 
   def login
     if signed_in?
-      redirect_to legs_url
     end
   end
 
@@ -21,7 +18,7 @@ class SessionsController < ApplicationController
     @user = User.find_or_create_by(uid: auth_hash['uid']) do |user|
       user.email = auth_hash['info']['email']
       #the user should update their profile
-      user.update = true
+      @user.update = true
     end
     #sets the current user
     self.current_user = @user
@@ -34,7 +31,7 @@ class SessionsController < ApplicationController
     end
 
     def logout
-      redirect_to login_url, notice: 'You have been logged out'
+      redirect_to legs_url, notice: 'You have been logged out'
     end
   end
 end
