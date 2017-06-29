@@ -18,7 +18,7 @@ class SessionsController < ApplicationController
     @user = User.find_or_create_by(uid: auth_hash['uid']) do |user|
       user.email = auth_hash['info']['email']
       #the user should update their profile
-      @user.update = true
+      user.update = true
     end
     #sets the current user
     self.current_user = @user
