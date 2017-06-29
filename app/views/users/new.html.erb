@@ -1,0 +1,44 @@
+<h1> Please complete your User Profile</h1>
+<%= form_with(model: user, local: true) do |form| %>
+  <% if user.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(user.errors.count, "error") %> prohibited this user profile from being saved:</h2>
+
+      <ul>
+      <% user.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+<li>
+<%= @user.uid %>
+</li>
+<li>
+  <%= @user.email %>
+</li>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name, id: :user_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :community %>
+    <%= form.text_field :community, id: :user_community %>
+  </div>
+
+  <div class="field">
+    <%= form.label :voucher %>
+    <%= form.text_field :voucher, id: :user_voucher %>
+  </div>
+
+  <div class="field">
+    <%= form.label :vouched %>
+    <%= form.radio_button :vouched, id: :user_vouched %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
