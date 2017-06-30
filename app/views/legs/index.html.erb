@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Find Key Route</h1>
+<%= link_to 'New Leg', new_leg_path %>
+<%= link_to 'List All Legs', list_path %>
+
+<%= form_with(model: @Leg, local: true) do |form| %>
+
+  <div class="field">
+    <%= form.label :origin %>
+    <%= form.text_field :origin, id: :trip_origin %>
+  </div>
+
+  <div class="field">
+    <%= form.label :destination %>
+    <%= form.text_field :destination, id: :trip_destination %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
+
+<br>
+
