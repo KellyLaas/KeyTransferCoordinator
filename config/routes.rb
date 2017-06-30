@@ -10,6 +10,8 @@ Rails.application.routes.draw do
   get 'legs/index', to: 'legs#index', as: 'index'
   get 'legs/list', to: 'legs#list', as: 'list'
   post 'legs/index', to: 'legs#index'
+  get 'users/index', to: 'users#index'
+  post 'users/index', to: 'users#index'
   get 'login', to: 'sessions#login', as: 'login'
   get 'logout', to: 'sessions#logout', as: 'logout'
   get 'auth/google_oauth2', as: 'google_login'

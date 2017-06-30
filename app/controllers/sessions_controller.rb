@@ -3,8 +3,8 @@ class SessionsController < ApplicationController
 
   def login
     if signed_in?
-    end
   end
+end
 
   def update
   end
