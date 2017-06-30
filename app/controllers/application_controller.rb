@@ -11,7 +11,6 @@ class ApplicationController < ActionController::Base
 
   def current_user=(user)
     session[:user_id] = user.uid
-    session[:user_name] = user.name
   end
 
   def signed_in?
