@@ -1,5 +1,4 @@
-
-<%= form_with(model: trip, local: true) do |form| %>
+<%= form_with(model: Trip, local: true) do |form| %>
   <% if user.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(user.errors.count, "error") %> prohibited this error from being saved:</h2>
@@ -13,8 +12,13 @@
   <% end %>
 
     <div class = "field">
-    <%= form.label :name %>
-    <%= form.text_field :name, id: name %>
+    <%= form.label :title %>
+    <%= form.text_field :title, id: trip_title %>
+    </div>
+
+    <dic class = "field">
+    <%= form.label :leg_id %>
+    <%= form.text_field :leg_id, id: trip_leg_id %>
     </div>
 
     <div class="actions">

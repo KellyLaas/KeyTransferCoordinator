@@ -1,5 +1,14 @@
 <h1>New User</h1>
 
+<%= link_to 'New Legs', legs_new_path %>
+<%= link_to 'Legs Index', legs_index_path %>
+<%= link_to 'New Trip', trips_new_path %>
+<%= link_to 'Trip Index', trips_index_path %>
+<%= link_to 'New Users', users_new_path %>
+<%= link_to 'Users Index', users_index_path %>
+
+<br><br>
+
 <%= render 'form', user: @user %>
 
 <%= link_to 'Back', users_path %>

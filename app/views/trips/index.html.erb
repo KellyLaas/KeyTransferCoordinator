@@ -1,13 +1,18 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Trips</h1>
+<%= link_to 'New Legs', legs_new_path %>
+<%= link_to 'Legs Index', legs_index_path %>
+<%= link_to 'New Trip', trips_new_path %>
+<%= link_to 'Trip Index', trips_index_path %>
+<%= link_to 'New Users', users_new_path %>
+<%= link_to 'Users Index', users_index_path %>
 
 <table>
   <thead>
     <tr>
-      <th>Origin</th>
-      <th>Destination</th>
-      <th>Ign</th>
+      <th>Title</th>
+      <th>Leg_ID</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -15,12 +20,8 @@
   <tbody>
     <% @trips.each do |trip| %>
     <tr>
-      <td><%= trip.origin %></td>
-      <td><%= trip.destination %></td>
-      <td><%= trip.IGN %></td>
-      <td><%= link_to 'Show', trip %></td>
-      <td><%= link_to 'Edit', edit_trip_path(trip) %></td>
-      <td><%= link_to 'Destroy', trip, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      <td><%= trip.title %></td>
+      <td><%= trip.leg_id %></td>
     </tr>
     <% end %>
   </tbody>
