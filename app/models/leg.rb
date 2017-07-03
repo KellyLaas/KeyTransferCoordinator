@@ -1,5 +1,5 @@
 class Leg < ApplicationRecord
-  belongs_to :users
-  belongs_to :trips
+  belongs_to :user
+  belongs_to :trip
   validates :origin, :destination, presence: true
 end
